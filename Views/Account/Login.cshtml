@@ -1,0 +1,34 @@
+﻿@model LibraryManagement.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+<h2>Đăng nhập</h2>
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.Error
+    </div>
+}
+<form asp-controller="Account"
+      asp-action="Login"
+      method="post">
+    <div>
+        <label>Tên đăng nhập</label>
+        <input asp-for="Username" />
+    </div>
+
+    <br />
+
+    <div>
+        <label>Mật khẩu</label>
+        <input asp-for="Password" />
+    </div>
+
+    <br />
+
+    <button type="submit">
+        Đăng nhập
+    </button>
+</form>
